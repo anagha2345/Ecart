@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="container row">
+        
+            <div class="p-2   col-3 text-center">
+                <a (click)="filter('')">
+                <img style="height: 200px; width: 75%;" class="rounded-circle w-100"
+                    src="https://i.postimg.cc/50WWKCzT/home-2618511-1920.jpg"
+                    alt="">
+                <h3>view all</h3>
+             </a>
+            </div>
+       
+        
+            <div class="p-2 col-3 text-center">
+                <a (click)="filter('1')">
+                <img style="height: 200px; width: 75%;" class="rounded-circle w-100"
+                    src="https://i.postimg.cc/m2cfR44T/decoration-2373342-1920.jpg"
+                    alt="">
+                <h3>sofas</h3> 
+              </a>
+            </div>
+     
+       
+            <div class="p-2  col-3 text-center"> 
+                <a (click)="filter(2)">
+                <img style="height: 200px; width: 75%;" class="rounded-circle w-100"
+                    src="https://i.postimg.cc/52pZqr9H/alexa-double-futon-sofa-cum-bed-sea-green-colour-by-arra-alexa-double-futon-sofa-cum-bed-sea-green-c.webp"
+                    alt="">
+                <h3>futons</h3>
+            </a>
+            </div>
+        
+       
+            <div class="p-2  col-3 text-center"> 
+                <a (click)="filter(3)">
+                <img style="height: 200px; width: 75%;" class="rounded-circle w-100"
+                    src="https://i.postimg.cc/yNgSXwhn/harper-2-seater-ottoman-with-storage-in-dark-grey-colour-by-adorn-homez-harper-2-seater-ottoman-with.webp"
+                    alt="">
+                <h3>settees and benches</h3>
+            </a>
+            </div>
+        
+    </div>
+</div>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div id="d1" *ngFor="let i of filterProducts | filter:searchKey:'productName'" class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img style="height: 300px;" class="card-img-top" src="{{i.productImage}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <!-- Product price-->
+                            {{i.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                href="products/viewProduct/{{i.id}}">View options</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
